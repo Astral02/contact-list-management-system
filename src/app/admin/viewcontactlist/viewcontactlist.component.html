@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="panel panel-info">
+    <div class="panel-heading">Contact List</div>
+    <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>FirstName</th>
+            <th>Lastname</th>
+            <th>Gender</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Role</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contactlistitem of cl">
+            <td>{{contactlistitem.UserName}}</td>
+            <td>{{contactlistitem.Password}}</td>
+            <td>{{contactlistitem.FirstName}}</td>
+            <td>{{contactlistitem.LastName}}</td>
+            <td>{{contactlistitem.Gender}}</td>
+            <td>{{contactlistitem.Mobile}}</td>
+            <td>{{contactlistitem.Email}}</td>
+            <td>{{contactlistitem.Address}}</td>
+            <td>{{contactlistitem.Role}}</td>
+            <td>
+              <!-- <button class="btn btn-primary" [routerLink]="['/viewcontactlist', contactlistitem.UserName]">Edit</button> -->
+              <button type="button" (click)="editContact(contactlistitem)" mat-raised-button color="primary">
+                  Edit
+                </button>
+            </td>
+            <td>
+              <button mat-raised-button (click)="deleteContact(contactlistitem.UserName)" color="warn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

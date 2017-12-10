@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="panel panel-info">
+    <div class="panel-heading">Edit</div>
+    <div class="panel-body">
+      <form #editDetailsForm="ngForm" class="form-horizontal" (submit)="updateDetails()" novalidate>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="username">User Name:</label>
+          <div class="col-sm-4">
+            <input class="form-control" id="username" disabled=t rue [(ngModel)]="contact.UserName" placeholder="Enter user name" name="username"
+              required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">Password:</label>
+          <div class="col-sm-4">
+            <input [(ngModel)]="contact.Password" class="form-control" id="pwd" type="password" placeholder="Enter password" name="pwd"
+              required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="firstname">First Name:</label>
+          <div class="col-sm-4">
+            <input class="form-control" id="firstname" [(ngModel)]="contact.FirstName" placeholder="Enter first name" name="firstname">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="lastname">Last Name:</label>
+          <div class="col-sm-4">
+            <input class="form-control" id="lastname" [(ngModel)]="contact.LastName" placeholder="Enter last name" name="lastname" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Email:</label>
+          <div class="col-sm-4">
+            <input class="form-control" id="email" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Enter email"
+              [(ngModel)]="contact.Email" name="email" type="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="mobile">Mobile:</label>
+          <div class="col-sm-4">
+            <input class="form-control" minlength="10" type="number" maxlength="10" id="mobile" [(ngModel)]="contact.Mobile" placeholder="Enter 10 digit mobile number"
+              name="mobile" required>
+            <!-- {{name.errors | json}} -->
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="address">Address:</label>
+          <div class="col-sm-4">
+            <input class="form-control" id="adress" placeholder="Enter Address" [(ngModel)]="contact.Address" name="adress">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="gender">Gender:</label>
+          <div class="col-sm-4">
+            <label class="radio-inline">
+              <input type="radio" name="gender" value="Male" [(ngModel)]="contact.Gender">Male
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="gender" value="Female" [(ngModel)]="contact.Gender">Female
+            </label>
+            <div class="form-group">
+              <div class="col-sm-4">
+                <button type="button" [routerLink]="['/viewdetails', contact.UserName ]" class="btn btn-primary">Cancel</button>
+              </div>
+              <!-- Can optionally provide a result for the closing dialog. -->
+              <div class="">
+                <button [disabled]="editDetailsForm.invalid" type="submit" class="btn btn-danger">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Login</div>
+
+        <div class="panel-body">
+            <form #loginForm="ngForm" class="form-horizontal" (submit)="login()">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="username">User Name:</label>
+                    <div class="col-sm-4">
+                        <input required type="text" [(ngModel)]="user.UserName" name="username" class="form-control" placeholder="Username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="pwd">Password:</label>
+                    <div class="col-sm-4">
+                        <input required type="password" [(ngModel)]="user.Password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-4">
+                        <button [disabled]="loginForm.invalid" type="submit" mat-raised-button color="primary">
+                            Login
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group" *ngIf="!loginService.isLoggedIn">
+                    <div class="col-sm-offset-2 col-sm-4">
+                        <div [ngClass]="{
+                         'text-success':loginService.isLoggedIn,
+                         'text-danger':!loginService.isLoggedIn
+                         }"> {{result}} </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
