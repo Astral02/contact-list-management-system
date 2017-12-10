@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
         this.user = data['result'];
         if (this.user !== undefined && this.user !== null) {
           this.loginService.isLoggedIn = true;
-          this.loginService.userName =  this.user.UserName;
+          this.loginService.userName = this.user.UserName;
           console.log('Logged in true');
           if (this.user.Role === 'Admin') {
             this.loginService.isAdmin = true;

@@ -9,7 +9,6 @@ import { ContactList } from './contact';
 })
 export class AppComponent {
   title = 'Contact list management system';
-  
 }
 
 

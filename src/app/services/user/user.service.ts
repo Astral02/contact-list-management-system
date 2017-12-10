@@ -7,16 +7,9 @@ export class UserService {
   contactDetails: ContactList;
   constructor(private http: HttpClient) { }
 
-
 editDetails(contact: ContactList) {
   return this.http.put<ContactList>('http://localhost:9001/editcontact', contact);
 }
-
-//{params: {'id': userName}}
-
-// deleteDetails(contact: ContactList) {
-//  return this.http.put<ContactList>('http://localhost:9001/deleteContactDetails', contact );
-// }
 
 deleteDetails(userName: string) {
   return this.http.put<ContactList>('http://localhost:9001/deleteContactDetails/' + userName, '' );

@@ -19,14 +19,7 @@ export class DeletedetailsComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(
       (data) => this.userName = data.get('id'));
     this.userDetails.getDetails(this.userName).subscribe(data => this.contact = data['result']);
-    
-    // this.userDetails.deleteDetails(this.contact).subscribe(
-    //   (data) => {
-    //     console.log(data);
-    //     this.route.navigateByUrl('/viewdetails/' + this.userName);
-    //   },
-    //   (err) => console.log(err)
-    // );
+
     this.userDetails.deleteDetails(this.userName).subscribe(
       (data) => {
         console.log(data);

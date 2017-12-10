@@ -13,6 +13,7 @@ import { CreatecontactComponent } from '../admin/createcontact/createcontact.com
 import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
 import { LogoutComponent } from '../logout/logout.component';
 import { AuthGuard } from '../services/guards/auth.guard';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -21,12 +22,6 @@ import { AuthGuard } from '../services/guards/auth.guard';
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
       { path: 'logout', component: LogoutComponent },
-      // { path: 'viewcontactlist:id/edit', component: EditcontactComponent },
-      // { path: 'createcontact', component: CreatecontactComponent },
-      // { path: 'deletecontact', component: DeletecontactComponent },
-      // { path: 'viewcontactlist', component: ViewcontactlistComponent },
-      // { path: 'admin', component: AdminComponent },
-      // { path: 'user', component: UserComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', component: PagenotfoundComponent }
     ])

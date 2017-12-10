@@ -1,8 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ContactList } from '../../contact';
 import { ContactlistService } from '../../services/contactlist.service';
-
-// import { FormsModule } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
@@ -21,7 +19,6 @@ export class DeletecontactComponent implements OnInit {
   }
 
   cancelDelete() {
-    //Logic/api call to save data. 
     this.dialogRef.close();
     console.log('inside cancel delete');
   }
@@ -37,5 +34,4 @@ export class DeletecontactComponent implements OnInit {
       (err) => console.log(err)
     );
   }
-
 }

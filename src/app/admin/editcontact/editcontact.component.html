@@ -2,7 +2,6 @@
   Edit Contact</h2>
 <form #editForm="ngForm" class="form-horizontal" (submit)="updateContact()" novalidate>
   <mat-dialog-content>
-
       <div class="form-group">
           <label class="control-label col-sm-2" for="username">User Name:</label>
           <div class="col-sm-4">
@@ -40,7 +39,6 @@
           <div class="col-sm-4">
             <input class="form-control" minlength="10" type="number" maxlength="10" id="mobile" [(ngModel)]="contact.Mobile" placeholder="Enter 10 digit mobile number"
               name="mobile" required>
-            <!-- {{name.errors | json}} -->
           </div>
         </div>
         <div class="form-group">
@@ -58,100 +56,20 @@
             <label class="radio-inline">
               <input type="radio" name="gender" value="Female" [(ngModel)]="contact.Gender">Female
             </label>
-
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-2" for="usertype">User Type:</label>
           <div class="col-sm-4">
-
             <select class="form-control" id="usertype" name="usertype" [(ngModel)]="contact.Role">
-                <!-- <option value="" selected>User Type?</option> -->
               <option vale="Admin" name="admin" [selected]="contact.Role == 'Admin'">Admin</option>
               <option value="User" name="user" [selected]="contact.Role == 'User'" default>User</option>
             </select>
           </div>
         </div>
-
       </mat-dialog-content>
   <mat-dialog-actions>
     <button mat-raised-button mat-dialog-close (click)="cancelUpdate()" color="primary">Cancel</button>
-    <!-- Can optionally provide a result for the closing dialog. -->
     <button [disabled]="editForm.invalid" mat-raised-button  type="submit" color="warn">Update</button>
-    <!-- <button [disabled]="editForm.invalid" class="form-control" type="submit" class="btn btn-primary">Create</button> -->
-  
   </mat-dialog-actions>
 </form>
-
-<!-- <div class="container"> 
-<div class="panel panel-info">
-  <div class="panel-heading">Register</div>
-  <div class="panel-body">
-    <form class="form-horizontal">
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="username">User Name:</label>
-        <div class="col-sm-4">
-          <input class="form-control" id="username" [(ngModel)]="contact.UserName" placeholder="Enter user name" name="username" required>
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Password:</label>
-        <div class="col-sm-4">
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required>
-        </div>
-      </div>
-      <!-- <div class="form-group">
-                    <label class="control-label col-sm-2" for="confpwd">Confirm Password:</label>
-                    <div class="col-sm-4">
-                        <input type="password" class="form-control" id="confpwd" placeholder="Confirm password" name="confpwd" required>
-                    </div>
-                </div> -->
-<!-- <div class="form-group">
-        <label class="control-label col-sm-2" for="firstname">First Name:</label>
-        <div class="col-sm-4">
-          <input class="form-control" id="firstname" placeholder="Enter first name" name="firstname">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="lastname">Last Name:</label>
-        <div class="col-sm-4">
-          <input class="form-control" id="lastname" placeholder="Enter last name" name="lastname" required>
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="email">Email:</label>
-        <div class="col-sm-4">
-          <input class="form-control" id="email" placeholder="Enter email" name="email" type="email" required>
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="gender">Gender:</label>
-        <div class="col-sm-4">
-          <label class="radio-inline">
-            <input type="radio" name="genderradio">Male
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="genderradio">Female
-          </label>
-
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="usertype">User Type:</label>
-        <div class="col-sm-4">
-
-          <select class="form-control" id="gender">
-            <option>admin</option>
-            <option>user</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-4">
-          <button type="submit" class="btn btn-default">Register</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-</div>  -->

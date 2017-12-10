@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin.component';
 import { AuthGuard } from '../services/guards/auth.guard';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -24,13 +25,7 @@ import { AuthGuard } from '../services/guards/auth.guard';
   ],
   imports: [
     CommonModule,
-    // BrowserModule,
-    // RoutingModule,
-    FormsModule,
-    HttpClientModule,
-    MatButtonModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
+    SharedModule,
     RouterModule.forChild([
       { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { Role: 'Admin' } },
       { path: 'viewcontactlist:id/edit', component: EditcontactComponent, canActivate: [AuthGuard], data: { Role: 'Admin' } },

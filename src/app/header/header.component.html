@@ -4,11 +4,15 @@
             <a class="active navbar-brand">Contact List Management System</a>
         </div>
         <ul class="nav navbar-nav navbar-left" *ngIf="loginService.isAdmin">
-            <li> <!--navbar-right -->
-                <a routerLink="/viewcontactlist"><span class="glyphicon glyphicon-home"></span> View Contact List</a>
+            <li>
+                <!--navbar-right -->
+                <a routerLink="/viewcontactlist">
+                    <span class="glyphicon glyphicon-home"></span> View Contact List</a>
             </li>
-            <li> <!--navbar-right -->
-                <a routerLink="/createcontact"> <span class="glyphicon glyphicon-plus"></span> New Contact</a>
+            <li>
+                <!--navbar-right -->
+                <a routerLink="/createcontact">
+                    <span class="glyphicon glyphicon-plus"></span> New Contact</a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -25,9 +29,9 @@
                     <span class="glyphicon glyphicon-user"> </span> Welcome, {{ loginService.userName }} ! </a>
             </li>
             <li *ngIf="loginService.isLoggedIn">
-                    <a routerLink="/logout">
-                        <span class="glyphicon glyphicon-log-out"></span> Logout</a>
-                </li>
+                <a routerLink="/logout">
+                    <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+            </li>
         </ul>
     </div>
 </nav>

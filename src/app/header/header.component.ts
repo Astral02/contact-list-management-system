@@ -8,6 +8,5 @@ import { LoginComponent } from '../login/login.component';
 })
 
 export class HeaderComponent {
-
     constructor(private loginService: LoginService) { }
 }

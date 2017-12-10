@@ -17,9 +17,7 @@ export class ViewcontactlistComponent implements OnInit {
   constructor(private contactList: ContactlistService,
     private dialog: MatDialog) { }
   ngOnInit() {
-    // setTimeout(() => {
     this.contactList.getcontactlist().subscribe(data => this.cl = data['result']);
-    //}, 10);
   }
 
   editContact(editcontactlist: ContactList): void {
@@ -27,8 +25,6 @@ export class ViewcontactlistComponent implements OnInit {
       data: editcontactlist,
       width: '750px'
     });
-
-
 
     this.dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed after edit');
@@ -47,6 +43,5 @@ export class ViewcontactlistComponent implements OnInit {
       console.log(result);
       this.contactList.getcontactlist().subscribe(udata => this.cl = udata['result']);
     });
-
   }
 }

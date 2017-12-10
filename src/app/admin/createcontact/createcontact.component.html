@@ -40,7 +40,6 @@
           <div class="col-sm-4">
             <input class="form-control" minlength="10" type="number" maxlength="10" id="mobile" [(ngModel)]="contact.Mobile" placeholder="Enter 10 digit mobile number"
               name="mobile" required>
-            <!-- {{name.errors | json}} -->
           </div>
         </div>
         <div class="form-group">
@@ -58,13 +57,11 @@
             <label class="radio-inline">
               <input type="radio" name="gender" value="Female" [(ngModel)]="contact.Gender">Female
             </label>
-
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-2" for="usertype">User Type:</label>
           <div class="col-sm-4">
-
             <select class="form-control" id="usertype" name="usertype" [(ngModel)]="contact.Role">
               <option value="" selected>User Type?</option>
               <option vale="Admin" name="admin" [selected]="contact.Role == 'Admin'">Admin</option>
@@ -72,18 +69,16 @@
             </select>
           </div>
         </div>
-
-
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-4">
             <button [disabled]="createForm.invalid" class="form-control" type="submit" class="btn btn-primary">Create</button>
           </div>
         </div>
-        <div class="form-group col-sm-offset-2 col-sm-4" *ngIf= "isSuccess">
-           <div [ngClass]="{
+        <div class="form-group col-sm-offset-2 col-sm-4" *ngIf="isSuccess">
+          <div [ngClass]="{
             'text-success':isSuccess,
             'text-danger':!isSuccess
-            }" > {{result}} </div>
+            }"> {{result}} </div>
         </div>
       </form>
     </div>

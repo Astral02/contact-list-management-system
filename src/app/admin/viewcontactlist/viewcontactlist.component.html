@@ -30,10 +30,9 @@
             <td>{{contactlistitem.Address}}</td>
             <td>{{contactlistitem.Role}}</td>
             <td>
-              <!-- <button class="btn btn-primary" [routerLink]="['/viewcontactlist', contactlistitem.UserName]">Edit</button> -->
               <button type="button" (click)="editContact(contactlistitem)" mat-raised-button color="primary">
-                  Edit
-                </button>
+                Edit
+              </button>
             </td>
             <td>
               <button mat-raised-button (click)="deleteContact(contactlistitem.UserName)" color="warn">Delete</button>
